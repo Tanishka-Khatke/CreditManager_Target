@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Credits List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+</head>
+<body>
+<button type="button"><a href="/home">Back</a></button>
+<h1>Credits List</h1>
+<a href="/createCredit">Add Credit</a>
+<br/><br/>
+<div>
+
+    <table border="1">
+        <tr>
+            <td colspan="3" style="background-color:powderblue;">Customer</td>
+            <td colspan="2" style="background-color:yellowgreen;">Product</td>
+            <td colspan="1" style="background-color:gold;">Credit
+            </th>
+
+        </tr>
+        <th style="background-color:powderblue;">First name</th>
+        <th style="background-color:powderblue;">Last Name</th>
+        <th style="background-color:powderblue;">Pesel number</th>
+        <th style="background-color:yellowgreen;">Product Name</th>
+        <th style="background-color:yellowgreen;">Product Value</th>
+        <th style="background-color:gold;">Credit Name</th>
+
+        <tr th:each="credit : ${credit}">
+            <td th:utext="${credit.customer.firstName}">...</td>
+            <td th:utext="${credit.customer.lastName}">...</td>
+            <td th:utext="${credit.customer.peselNumber}">...</td>
+            <td th:utext="${credit.product.productName}">...</td>
+            <td th:utext="${credit.product.productValue}">...</td>
+            <td th:utext="${credit.creditName}">...</td>
+
+        </tr>
+
+    </table>
+
+</div>
+</body>
+</html>

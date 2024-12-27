@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Manager</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+</head>
+
+<body>
+<h1>Credit Manager</h1>
+<p>Welcome to our credit manager. You can save and load information about credits.</p>
+<img height="200" src="../static/images/bankphoto.png" th:src="@{images/bankphoto.png}"/>
+<h3><b>There are two types of use credit manager:</b></h3>
+<h3 style="background-color:powderblue;">1) Create Credit</h3>
+<button type="button"><a href="/createCredit">Create Credit</a></button>
+
+<a>Click here to create a credit. You need to fill a form.</a>
+<h3 style="background-color:gold;">2) Get all credits</h3>
+<button type="button"><a href="/getList">Get Credits</a></button>
+
+<a>Click here to load all created credits.</a>
+</body>
+</html>

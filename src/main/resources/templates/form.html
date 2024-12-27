@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Credit</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<button type="button"><a href="/home">Back</a></button>
+
+<h1>Create a new credit</h1>
+
+
+<form action="#" method="post" th:action="@{/createCredit}" th:object="${credit}">
+    <p style="background-color:powderblue;">CREDIT INFORMATION</p>
+
+    <input th:field="*{id}" type="hidden"/>
+
+    <p>Credit Name: <input th:field="*{creditName}" type="text"/></p>
+
+    <p style="background-color:gold;">CUSTOMER INFORMATION</p>
+
+    <p>First name: <input th:field="*{customer.firstName}" type="text"/></p>
+    <p>Last name: <input th:field="*{customer.lastName}" type="text"/></p>
+    <p>Pesel number: <input th:field="*{customer.peselNumber}" type="number"/></p>
+
+    <p style="background-color:yellowgreen;">PRODUCT INFORMATION</p>
+
+    <p>Product Name: <input th:field="*{product.productName}" type="text"/></p>
+    <p>Product value: <input th:field="*{product.productValue}" type="number"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+<div style="color:red;font-style:italic;" th:if="${errorMessage}"
+     th:utext="${errorMessage}">
+    ...
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<button type="button"><a href="/home">Back</a></button>
+<button type="button"><a href="/createCredit">Create new credit</a></button>
+
+<body>
+<h1>Created Credit Information</h1>
+<p>Your credit created correctly!</p>
+<p th:text="'Credit number: ' + ${credit.id}"></p>
+</body>
+</html>
